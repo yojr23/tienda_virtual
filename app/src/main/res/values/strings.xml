@@ -9,4 +9,6 @@
     <string name="msg_descripcion">Digite la desripcion</string>
     <string name="msg_precio">Digite precio</string>
     <string name="msg_img">Subir imagen</string>
+    <string name="computador_asus">Computador Asus</string>
+    <string name="_13_000_000_00">$ 13.000.000,00</string>
 </resources>
