@@ -1,14 +1,26 @@
 package com.joserincon.tienda_virtual;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Product> listProducts = new ArrayList<>();
+    private RecyclerView rvProductsMain;
+
+    private Toolbar topAppBar;
+
 
 
 
@@ -17,6 +29,34 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loadFakeData();
+
+        rvProductsMain= findViewById(R.id.rv_product_main);
+
+        topAppBar = findViewById(R.id.top_app_bar_list_product);
+
+        topAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if (menuItem.getItemId() == R.id.itemm_add_product){
+                    startActivity(new Intent(MainActivity.this,FormProductActivity.class));
+                    return true;
+
+                } else if (menuItem.getItemId() == R.id.itemm_add_category) {
+                    Toast.makeText(MainActivity.this, "Click en categoria", Toast.LENGTH_SHORT).show();
+                    return true;
+
+                }
+                return false;
+            }
+        });
+
+        ProductAdapter myAdapter = new ProductAdapter(listProducts);
+
+        rvProductsMain.setAdapter(myAdapter);
+        StaggeredGridLayoutManager myStagger = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
+        GridLayoutManager myGrid = new GridLayoutManager(getApplicationContext(),3);
+        rvProductsMain.setLayoutManager(myStagger);
     }
 
 

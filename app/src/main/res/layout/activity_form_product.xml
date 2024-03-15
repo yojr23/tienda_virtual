@@ -9,6 +9,8 @@
     tools:context=".FormProductActivity">
 
 
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/et_name_product_form"
         android:layout_width="match_parent"
