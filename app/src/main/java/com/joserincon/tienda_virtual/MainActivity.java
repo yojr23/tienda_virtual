@@ -14,12 +14,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
+
+
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Product> listProducts = new ArrayList<>();
     private RecyclerView rvProductsMain;
 
-    private Toolbar topAppBar;
 
 
 
@@ -87,4 +89,6 @@ public class MainActivity extends AppCompatActivity {
         listProducts.add(product2);
         listProducts.add(product3);
     }
+
+    private Toolbar topAppBar;
 }
