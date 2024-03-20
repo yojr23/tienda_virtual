@@ -9,18 +9,39 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         app:liftOnScroll="true"
-
         android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/top_app_bar_list_product"
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            style="?attr/collapsingToolbarLayoutMediumStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:title="@string/bienvenidos"
-            app:menu="@menu/app_top_bar"
-            app:navigationIcon="@drawable/ic_account" />
+            android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
+            app:contentScrim= "@color/seed"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            >
+
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/top_app_bar_list_product"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:minHeight="?attr/actionBarSize"
+
+                app:layout_collapseMode="pin"
+                app:menu="@menu/app_top_bar"
+                app:title="@string/bienvenidos">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_profile_home_user"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ic_launcher_background"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="1dp"
+                    android:layout_margin="4dp"/>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
