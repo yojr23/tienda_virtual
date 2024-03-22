@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         topAppBar = findViewById(R.id.top_app_bar_list_product);
 
 
-
         topAppBar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
